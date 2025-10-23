@@ -1,0 +1,25 @@
+sources:
+  - name: stripe
+    database: raw
+    schema: stripe
+    description: This model processes and standardizes payment data from Stripe, providing a structured view of payment transactions for analysis and reporting.
+    tables:
+      - name: payment      
+        columns:
+        - name: id
+          description: A unique identifier for each payment transaction. This is the Primary key
+          data_tests:
+            - unique
+            - not_null
+        - name: orderid
+          description: The identifier for the order associated with the payment.
+          data_tests:
+            - not_null
+        - name: status
+          description: The current status of the payment, indicating whether it is completed, pending, or failed.
+        - name: paymentmethod
+          description: The method used for the payment, such as credit card or bank transfer.
+        - name: amount
+          description: The total amount of the payment in dollars.
+        - name: created
+          description: The timestamp when the payment was created, in UTC.
