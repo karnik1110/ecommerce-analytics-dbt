@@ -9,6 +9,8 @@ select * from {{ ref('fct_orders') }}
 
 ),
 
+--  Feature one implemented
+
 customer_orders as (
 
     select
